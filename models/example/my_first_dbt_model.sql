@@ -8,7 +8,7 @@
 */
 
 --{{ config(materialized='table') }}
-{{config(materialized='incremental',unique_key='id')}}
+{{config(materialized='table')}}
 with source_data as (
 
     select 1 as id
