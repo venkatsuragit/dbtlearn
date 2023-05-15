@@ -7,13 +7,13 @@
     Try changing "table" to "view" below
 */
 
-{{ config(materialized='table') }}
-
+--{{ config(materialized='table') }}
+{{config(materialized='incremental',unique_key='id')}}
 with source_data as (
 
     select 1 as id
     union all
-    select null as id
+    select 200 as id
 
 )
 

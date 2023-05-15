@@ -1,7 +1,3 @@
-CREATE OR REPLACE PROCEDURE output_message(message VARCHAR)
-RETURNS VARCHAR NOT NULL
-LANGUAGE SQL
-AS
-BEGIN
-  RETURN message;
-END;
+{{config(materialized='incremental',unique_key='Id')}}
+select *
+from my_second_dbt_model;
